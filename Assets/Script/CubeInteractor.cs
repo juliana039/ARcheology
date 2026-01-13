@@ -42,36 +42,40 @@ public class CubeInteractor : MonoBehaviour, IInteractable
         }
     }
 
-    private void ShowObjectInfo()
+private void ShowObjectInfo()
+{
+    Debug.Log("Mostrando info do objeto");
+
+    if(objectInfo == null) return;
+
+    var infoController = FindObjectOfType<ObjectInfoController>();
+
+    if(infoController != null)
     {
-        Debug.Log("Mostrando info do objeto");
+        infoController.SetObjectInfo(objectInfo);
+        infoController.SetVisible(true);
 
-        if(objectInfo == null) return;
-
-        var infoController = FindObjectOfType<ObjectInfoController>();
-
-        if(infoController != null)
-        {
-            infoController.SetObjectInfo(objectInfo);
-            infoController.SetVisible(true);
-
-            infoController.transform.SetParent(transform);
-            infoController.transform.localPosition = new Vector3(-2 , 1.2f, 0);
-        }
-        
+        // Move só o PANEL (onde está o ObjectInfoController)
+        // Assumindo que ObjectInfoController está no Panel
+        Transform panelTransform = infoController.transform;
+        panelTransform.SetParent(transform);
+        panelTransform.localRotation = Quaternion.identity;
+        panelTransform.localScale = Vector3.one;
+        panelTransform.localPosition = new Vector3(0, 1f, 0);
     }
+}
 
-    private void HideObjectInfo()
+private void HideObjectInfo()
+{
+    Debug.Log("Escondendo info do objeto");
+    var infoController = FindObjectOfType<ObjectInfoController>();
+
+    if(infoController != null)
     {
-        Debug.Log("Escondendo info do objeto");
-        var infoController = FindObjectOfType<ObjectInfoController>();
-
-        if(infoController != null)
-        {
-            infoController.SetVisible(false);
-            infoController.transform.SetParent(null);
-        }
-        
+        infoController.SetVisible(false);
+        // Volta o Panel para o Canvas original
+        infoController.transform.SetParent(GameObject.Find("Canvas").transform);
     }
+}
 
 }
