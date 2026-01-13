@@ -2,11 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeInteractor : MonoBehaviour, IInteractable
+public class ObjectInteractor : MonoBehaviour, IInteractable
 {
     private bool isHeld = false;
 
     [SerializeField] private SOObjectInfo objectInfo;
+    [SerializeField] private float infoDisplayHeight = 1.0f;
+        [SerializeField] private float infoDisplayX = 0f;
+                [SerializeField] private float infoDisplayZ = 0f;
+
+
     public void OnInteract()
     {
         Debug.Log("Interagindo com o cubo!");
@@ -61,7 +66,7 @@ private void ShowObjectInfo()
         panelTransform.SetParent(transform);
         panelTransform.localRotation = Quaternion.identity;
         panelTransform.localScale = Vector3.one;
-        panelTransform.localPosition = new Vector3(0, 1f, 0);
+        panelTransform.localPosition = new Vector3(infoDisplayX, infoDisplayHeight, infoDisplayZ);
     }
 }
 
