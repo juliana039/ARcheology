@@ -9,6 +9,7 @@ public class ScannerController : MonoBehaviour
     [SerializeField] private float scanDuration = 3f;
     [SerializeField] GameObject scamUI;
     [SerializeField] private ParticleSystem scanEffect;
+    [SerializeField] private AudioSource scanAudio;
 
     private Animator animator;
 
@@ -19,21 +20,26 @@ public class ScannerController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.TryGetComponent<IInteractable>(out IInteractable interactable))
+        if (collision.transform.TryGetComponent<IInteractable>(out IInteractable interactable))
         {
             TryToPutOnSpot(collision.gameObject);
         }
     }
 
+    public void HideUI()
+    {
+        scamUI.SetActive(false);
+    }
+    
     private void TryToPutOnSpot(GameObject obj)
     {
-        if(!spot.IsOccupied())
+        if (!spot.IsOccupied())
         {
             obj.transform.SetParent(spot.transform);
             obj.transform.localPosition = Vector3.zero;
             obj.transform.localRotation = Quaternion.identity;
 
-            if(obj.TryGetComponent<Rigidbody>(out Rigidbody rb))
+            if (obj.TryGetComponent<Rigidbody>(out Rigidbody rb))
             {
                 rb.isKinematic = true;
             }
@@ -43,27 +49,29 @@ public class ScannerController : MonoBehaviour
                 StartCoroutine(StartScanning(interactor));
             }
 
-            
+
         }
     }
 
     private IEnumerator StartScanning(ObjectInteractor interactor)
-{
-    Debug.Log("Starting Scan...");
-    animator.SetBool("isScanning", true);
-    scanEffect.Play(); 
-    scamUI.SetActive(false);
-    interactor.SetLocked(true);
-    interactor.SetScanned(false);
-    
-    yield return new WaitForSeconds(scanDuration);    
-    
-    Debug.Log("Scan Complete!");    
-    animator.SetBool("isScanning", false);
-    scanEffect.Stop(); 
-    scamUI.SetActive(true);
-    interactor.SetLocked(false);
-    interactor.SetScanned(true);
-}
+    {
+        Debug.Log("Starting Scan...");
+        animator.SetBool("isScanning", true);
+        scanEffect.Play();
+        scanAudio.Play();
+        scamUI.SetActive(false);
+        interactor.SetLocked(true);
+        interactor.SetScanned(false);
+
+        yield return new WaitForSeconds(scanDuration);
+
+        Debug.Log("Scan Complete!");
+        animator.SetBool("isScanning", false);
+        scanEffect.Stop();
+        scanAudio.Stop();
+        scamUI.SetActive(true);
+        interactor.SetLocked(false);
+        interactor.SetScanned(true);
+    }
 
 }

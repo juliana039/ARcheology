@@ -24,6 +24,14 @@ public class ObjectInteractor : MonoBehaviour, IInteractable
         {
             Debug.Log("Cubo pego!");
             isHeld = true;
+
+            var scanner = FindObjectOfType<ScannerController>();
+            if (scanner != null)
+            {
+                scanner.HideUI();
+            }
+
+
             ShowObjectInfo();
         }
         else if (isHeld)
