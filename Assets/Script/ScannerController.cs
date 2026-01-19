@@ -8,6 +8,7 @@ public class ScannerController : MonoBehaviour
     [SerializeField] private SpotController spot;
     [SerializeField] private float scanDuration = 3f;
     [SerializeField] GameObject scamUI;
+    [SerializeField] private ParticleSystem scanEffect;
 
     private Animator animator;
 
@@ -47,24 +48,22 @@ public class ScannerController : MonoBehaviour
     }
 
     private IEnumerator StartScanning(ObjectInteractor interactor)
-    {
-        Debug.Log("Starting Scan...");
-
-        animator.SetBool("isScanning", true);
-
-        scamUI.SetActive(false);
-
-        interactor.SetLocked(true);
-        interactor.SetScanned(false);
-
-        yield return new WaitForSeconds(scanDuration);    
-        Debug.Log("Scan Complete!");    
-
-        animator.SetBool("isScanning", false);
-
-        scamUI.SetActive(true);
-        interactor.SetLocked(false);
-        interactor.SetScanned(true);
-    }
+{
+    Debug.Log("Starting Scan...");
+    animator.SetBool("isScanning", true);
+    scanEffect.Play(); 
+    scamUI.SetActive(false);
+    interactor.SetLocked(true);
+    interactor.SetScanned(false);
+    
+    yield return new WaitForSeconds(scanDuration);    
+    
+    Debug.Log("Scan Complete!");    
+    animator.SetBool("isScanning", false);
+    scanEffect.Stop(); 
+    scamUI.SetActive(true);
+    interactor.SetLocked(false);
+    interactor.SetScanned(true);
+}
 
 }
