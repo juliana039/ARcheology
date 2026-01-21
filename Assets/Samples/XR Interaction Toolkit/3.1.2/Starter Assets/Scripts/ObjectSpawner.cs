@@ -92,7 +92,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
         [SerializeField]
         [Tooltip("The size, in viewport units, of the periphery inside the viewport that will not be considered in view.")]
-        float m_ViewportPeriphery = 0.15f;
+        float m_ViewportPeriphery = 0.3f;
 
         /// <summary>
         /// The size, in viewport units, of the periphery inside the viewport that will not be considered in view.

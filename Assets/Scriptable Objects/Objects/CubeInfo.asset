@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00fdb24be8de44b38e775e830e9dbe2, type: 3}
   m_Name: CubeInfo
   m_EditorClassIdentifier: 
-  objectName: Cubo
-  description: "Isto \xE9 um cubo top demais"
+  objectName: Cubo de Oferendas
+  description: "Recept\xE1culo para gr\xE3os sagrados. Geometria est\xE1vel dos templos.\n\nDica:
+    S\xF3lido plat\xF4nico. 6 faces, 8 v\xE9rtices, 12 arestas. Nunca rola."
+  correctCabinet: 2
