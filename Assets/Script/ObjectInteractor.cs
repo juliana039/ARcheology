@@ -7,7 +7,7 @@ public class ObjectInteractor : MonoBehaviour, IInteractable
     private bool isHeld = false;
     private bool isLocked = false;
     private bool isScanned = false;
-    private bool isCorrectlyPlaced = false; // NOVO
+    private bool isCorrectlyPlaced = false; 
     
     [SerializeField] private SOObjectInfo objectInfo;
     [SerializeField] private float infoDisplayHeight = 1.0f;

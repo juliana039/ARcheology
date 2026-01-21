@@ -5,11 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
-    
-    [SerializeField] private List<ObjectInteractor> allObjects; // Arraste os 6 objetos aqui
-    [SerializeField] private GameObject victoryCanvas; // Canvas de vitória
-    
-    private void Awake()
+
+    [SerializeField] private GameObject victoryPanel;
+
+    void Awake()
     {
         if (Instance == null)
         {
@@ -20,33 +19,45 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    public void SetVictoryPanel(GameObject panel)
+    {
+        victoryPanel = panel;
+    }
+
     public void CheckVictory()
-{
-    ObjectInteractor[] interactors = FindObjectsOfType<ObjectInteractor>();
-    if (interactors == null || interactors.Length == 0) return;
-    
-    foreach (ObjectInteractor interactor in interactors)
     {
-        if (interactor == null || interactor.GetObjectInfo() == null) continue;
-        
-        if (!interactor.IsCorrectlyPlaced())
-        {
-            Debug.Log($"{interactor.gameObject.name} ainda não está no lugar correto");
+        ObjectInteractor[] interactors = FindObjectsOfType<ObjectInteractor>();
+
+        if (interactors == null || interactors.Length == 0)
             return;
-        }
-    }
-    
-    Debug.Log("🎉 VITÓRIA! Todos os artefatos Chikenistas foram organizados corretamente!");
-}
-    
-    private void Victory()
-    {
-        Debug.Log("🎉 VITÓRIA! Todos os objetos estão nos lugares corretos!");
-        
-        if (victoryCanvas != null)
+
+        foreach (ObjectInteractor interactor in interactors)
         {
-            victoryCanvas.SetActive(true);
+            if (interactor == null || interactor.GetObjectInfo() == null)
+                continue;
+
+            if (!interactor.IsCorrectlyPlaced())
+            {
+                Debug.Log($"{interactor.gameObject.name} ainda não está no lugar correto");
+                return;
+            }
+        }
+
+        Debug.Log("🎉 VITÓRIA! Todos os artefatos Chikenistas foram organizados corretamente!");
+        ShowVictory();
+    }
+
+    private void ShowVictory()
+    {
+        if (victoryPanel != null)
+        {
+            victoryPanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("Victory Panel NÃO foi atribuído ao GameManager!");
         }
     }
+
 }

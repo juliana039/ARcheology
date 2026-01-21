@@ -8,10 +8,26 @@ using UnityEngine.XR.ARFoundation;
 public class StartExperience : MonoBehaviour
 {
     [SerializeField] private GameObject cube;
+    [SerializeField] private GameObject endingCanvas;
+
 
     public void OnStartExperience(ARPlane plane)
     {
         var scene = Instantiate(cube, plane.transform.position, Quaternion.identity);
+
+
+         GameManager gm = scene.GetComponentInChildren<GameManager>();
+
+        if (gm != null)
+        {
+            gm.SetVictoryPanel(endingCanvas);
+        }
+        else
+        {
+            Debug.LogError("GameManager NÃO encontrado dentro do Scene Template!");
+        }
+
+        
 
         for (int i = 0; i < scene.transform.childCount; i++)
         {

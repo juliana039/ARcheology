@@ -10,6 +10,7 @@ public class InitialSetup : MonoBehaviour
     [SerializeField] private GameObject startExperienceUI; //UI para iniciar a experiência
     [SerializeField] private StartExperience startExperience; //script para iniciar a experiência
 
+
     void OnEnable()
     {
         planeManager.planesChanged += OnPlanesUpdated;
