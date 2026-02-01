@@ -7,25 +7,35 @@ public class InputHandler
     public static bool TryRayCastHit(out RaycastHit hitObject)
     {
 #if ENABLE_INPUT_SYSTEM
-        if (UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
+        // Touch (mobile)
+        if (UnityEngine.InputSystem.Touchscreen.current != null)
+        {
+            var touch = UnityEngine.InputSystem.Touchscreen.current.primaryTouch;
+            
+            if (touch.press.wasPressedThisFrame)
+            {
+                Vector2 touchPosition = touch.position.ReadValue();
+                Ray ray = Camera.main.ScreenPointToRay(touchPosition);
+                
+                if (Physics.Raycast(ray, out hitObject))
+                {
+                    return true;
+                }
+            }
+        }
+        // Mouse (editor/fallback)
+        else if (UnityEngine.InputSystem.Mouse.current != null && 
+                 UnityEngine.InputSystem.Mouse.current.leftButton.wasPressedThisFrame)
         {
             Ray ray = Camera.main.ScreenPointToRay(UnityEngine.InputSystem.Mouse.current.position.ReadValue());
+            
             if (Physics.Raycast(ray, out hitObject))
             {
                 return true;
             }
         }
 #endif
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-        {
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            if (Physics.Raycast(ray, out hitObject))
-            {
-                return true;
-            }
-           
-        }
-
+        
         hitObject = default;
         return false;
     }
