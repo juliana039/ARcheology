@@ -6084,7 +6084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5616967473186379819, guid: fc017dfb3020b4bbbb2a9c6d3a4c3bce, type: 3}
       propertyPath: infoDisplayX
-      value: 0.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5616967473186379819, guid: fc017dfb3020b4bbbb2a9c6d3a4c3bce, type: 3}
       propertyPath: infoDisplayZ
