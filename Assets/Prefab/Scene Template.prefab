@@ -5838,13 +5838,37 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6933466200047897256, guid: 5b7ee5e730abe44f5b5642458c3b14f7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1067856035410412712}
   m_SourcePrefab: {fileID: 100100000, guid: 5b7ee5e730abe44f5b5642458c3b14f7, type: 3}
 --- !u!4 &1864160769260020856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 836940294049305804, guid: 5b7ee5e730abe44f5b5642458c3b14f7, type: 3}
   m_PrefabInstance: {fileID: 1316102862563143860}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8249224880306469404 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6933466200047897256, guid: 5b7ee5e730abe44f5b5642458c3b14f7, type: 3}
+  m_PrefabInstance: {fileID: 1316102862563143860}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1067856035410412712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249224880306469404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb77baa4385a44a42a8c2da8be6b57ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scannerRotation: {x: 0, y: 0, z: 0}
+  cabinetRotation: {x: 0, y: 0, z: 0}
+  scannerPositionOffset: {x: 0, y: 0, z: 0}
+  cabinetPositionOffset: {x: 0, y: 1, z: 0}
 --- !u!1001 &2638535725357591900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5934,7 +5958,7 @@ MonoBehaviour:
   scannerRotation: {x: 0, y: 0, z: 0}
   cabinetRotation: {x: 0, y: 0, z: 0}
   scannerPositionOffset: {x: 0, y: 0.15, z: 0}
-  cabinetPositionOffset: {x: 0, y: 0.3, z: 0}
+  cabinetPositionOffset: {x: 0, y: 1, z: 0}
 --- !u!1001 &2770412851393505719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6033,7 +6057,7 @@ MonoBehaviour:
   scannerRotation: {x: 0, y: 0, z: 0}
   cabinetRotation: {x: 0, y: 0, z: 0}
   scannerPositionOffset: {x: 0, y: 0.15, z: 0}
-  cabinetPositionOffset: {x: 0, y: 0.15, z: 0}
+  cabinetPositionOffset: {x: 0, y: 1, z: 0}
 --- !u!1001 &3294868405957180738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6109,8 +6133,32 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4092080985269555292, guid: fc017dfb3020b4bbbb2a9c6d3a4c3bce, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6474459686149937871}
   m_SourcePrefab: {fileID: 100100000, guid: fc017dfb3020b4bbbb2a9c6d3a4c3bce, type: 3}
+--- !u!1 &1544810135193611550 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4092080985269555292, guid: fc017dfb3020b4bbbb2a9c6d3a4c3bce, type: 3}
+  m_PrefabInstance: {fileID: 3294868405957180738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6474459686149937871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544810135193611550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb77baa4385a44a42a8c2da8be6b57ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scannerRotation: {x: 0, y: 0, z: 0}
+  cabinetRotation: {x: 0, y: 0, z: 0}
+  scannerPositionOffset: {x: 0, y: 0, z: 0}
+  cabinetPositionOffset: {x: 0, y: 1, z: 0}
 --- !u!4 &8115972143010428375 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6708112685854492821, guid: fc017dfb3020b4bbbb2a9c6d3a4c3bce, type: 3}
@@ -6126,6 +6174,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -681116342999981704, guid: 15fa8a4b35b56450eb0bdb81439b1d64, type: 3}
       propertyPath: cabinetRotation.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -681116342999981704, guid: 15fa8a4b35b56450eb0bdb81439b1d64, type: 3}
+      propertyPath: scannerRotation.x
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 569039494299962974, guid: 15fa8a4b35b56450eb0bdb81439b1d64, type: 3}
@@ -6304,7 +6356,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -6716657759970699496, guid: 8dec4601ceff947bb836dbe9b49089b3, type: 3}
       propertyPath: cabinetPositionOffset.y
-      value: -0.1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7244147109153918937, guid: 8dec4601ceff947bb836dbe9b49089b3, type: 3}
       propertyPath: m_LocalPosition.x
