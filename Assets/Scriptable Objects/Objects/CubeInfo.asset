@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00fdb24be8de44b38e775e830e9dbe2, type: 3}
   m_Name: CubeInfo
   m_EditorClassIdentifier: 
-  objectName: Cubo de Oferendas
-  description: "Recept\xE1culo para gr\xE3os sagrados. Geometria est\xE1vel dos templos.\n\nDica:
-    S\xF3lido plat\xF4nico. 6 faces, 8 v\xE9rtices, 12 arestas. Nunca rola."
+  objectName: Caixa Sagrada
+  description: "Armaz\xE9m firme e est\xE1vel. Seu formato impede que role.\n\nDica:
+    A caixa sagrada deve ficar pr\xF3ximo da est\xE1tua da Grande Matriarca."
   correctCabinet: 2

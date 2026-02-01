@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00fdb24be8de44b38e775e830e9dbe2, type: 3}
   m_Name: FlowerPinkInfo
   m_EditorClassIdentifier: 
-  objectName: "Flora Alien\xEDgena Rosea"
-  description: "Planta do planeta Chikenista. Processo de fotoss\xEDntese adaptado
-    \xE0 luz estelar dupla.\nDica: Autotr\xF3fica. Produz oxig\xEAnio e glucose a
-    partir de luz."
+  objectName: Flora Rosea
+  description: "Planta decorativa cultivada na \xE1rea principal do Imp\xE9rio.\nDica:
+    A flor no meio de tudo torna o ambiente cada vez mais elegante."
   correctCabinet: 1

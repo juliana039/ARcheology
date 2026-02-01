@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00fdb24be8de44b38e775e830e9dbe2, type: 3}
   m_Name: FlowerOrangeInfo
   m_EditorClassIdentifier: 
-  objectName: "Flora Alien\xEDgena \xCDgnea"
-  description: "Variedade com pigmentos carotenoides. Cresce nos vulc\xF5es adormecidos
-    do planeta natal.\n\nDica: Como sua irm\xE3 rosa, \xE9 fotossintetizante. Prefere
-    calor extremo."
+  objectName: Flor Solar
+  description: "Esp\xE9cie companheira da flor rosa.\n\nDica: Onde a flor rosa vai,
+    a laranja sempre acompanha."
   correctCabinet: 1

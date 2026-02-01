@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00fdb24be8de44b38e775e830e9dbe2, type: 3}
   m_Name: SphereInfo
   m_EditorClassIdentifier: 
-  objectName: Orbe Celestial Chikenista
-  description: "Objeto ritual\xEDstico. Representa o ovo c\xF3smico primordial na
-    mitologia.\n\nDica: Forma perfeita com infinitos planos de simetria. Rola em
-    qualquer dire\xE7\xE3o."
+  objectName: "Ovo C\xF3smico"
+  description: "Rel\xEDquia redonda que representa o come\xE7o de tudo.\n\nDica:
+    O Ovo C\xF3smico n\xE3o divide o mesmo espa\xE7o sagrado da Deusa."
   correctCabinet: 0

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b00fdb24be8de44b38e775e830e9dbe2, type: 3}
   m_Name: CylinderInfo
   m_EditorClassIdentifier: 
-  objectName: Pilar da Capital Perdida
-  description: "Fragmento arquitet\xF4nico dos Chikenistas. Suportava estruturas
-    circulares atrav\xE9s de for\xE7as distribu\xEDdas uniformemente.\n\nDica: S\xF3lido
-    de revolu\xE7\xE3o. Sustentava o peso atrav\xE9s de suas faces paralelas."
+  objectName: Pilar Chickenista
+  description: "Fragmento arquitet\xF4nico dos Chikenistas. Estrutura que sustenta
+    templos e protege rel\xEDquias importantes.\n\nDica: O Pilar sempre permanece
+    ao lado do Ovo C\xF3smico."
   correctCabinet: 0
